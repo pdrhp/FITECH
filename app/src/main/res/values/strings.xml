@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">FITECH</string>
+    <string name="label_email">Email</string>
+    <string name="label_senha">Senha</string>
+    <string name="underlined_forget_you_password"><u>Esqueceu sua senha?</u></string>
+    <string name="button_entrar">ENTRAR</string>
+    <string name="label_ou">OU</string>
+    <string name="button_cadastrar">CADASTRAR</string>
+    <string name="check_box_termos">Concordo com os termos e serviços.</string>
+    <string name="button_registrar">REGISTRAR</string>
+    <string name="label_calculadoraIMC">Calculadora IMC</string>
+    <string name="button_ACESSAR">ACESSAR</string>
+
+</resources>
