@@ -60,7 +60,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_calculadoraIMC"
         android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:background="@drawable/btn3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/iconCalcularIMC"
@@ -82,5 +82,162 @@
         android:layout_marginTop="25dp"
          />
 
+    <View
+        android:id="@+id/iconListadeExercicios"
+        android:layout_width="25dp"
+        android:layout_height="31.25dp"
+        android:background="@drawable/icon_listadeexercicios"
+        app:layout_constraintStart_toStartOf="@id/iconCalcularIMC"
+        app:layout_constraintTop_toBottomOf="@id/divider_1"
+        android:layout_marginTop="33dp"/>
+
+    <TextView
+        android:id="@+id/labelListaDeExercicios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/iconListadeExercicios"
+        app:layout_constraintTop_toTopOf="@id/iconListadeExercicios"
+        app:layout_constraintStart_toEndOf="@id/iconCalcularIMC"
+        android:layout_marginLeft="12dp"
+        android:fontFamily="@font/khand_medium"
+        android:text="@string/label_listaDeExercicio"
+        android:textSize="20dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_listaDeExercicios"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btn3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/iconListadeExercicios"
+        app:layout_constraintTop_toTopOf="@id/iconListadeExercicios"
+        android:layout_marginRight="15dp"
+        android:text="@string/button_ACESSAR"
+        android:textSize="20dp"
+        android:fontFamily="@font/khand_medium"
+        />
+
+    <View
+        android:id="@+id/divider_2"
+        android:layout_width="370dp"
+        android:layout_height="1dp"
+        android:background="@drawable/line_1"
+        app:layout_constraintTop_toBottomOf="@id/button_listaDeExercicios"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="25dp"
+        />
+
+    <View
+        android:id="@+id/iconCalcularCalorias"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/icon_calcularcalorias"
+        app:layout_constraintStart_toStartOf="@id/iconListadeExercicios"
+        app:layout_constraintTop_toBottomOf="@id/divider_2"
+        app:layout_constraintEnd_toStartOf="@id/labelCalculadoraCalorias"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"/>
+
+    <TextView
+        android:id="@+id/labelCalculadoraCalorias"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/iconCalcularCalorias"
+        app:layout_constraintTop_toTopOf="@id/iconCalcularCalorias"
+        app:layout_constraintStart_toEndOf="@id/iconCalcularIMC"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/khand_medium"
+        android:text="@string/label_calculoDeCalorias"
+        android:lines="2"
+        android:textSize="20dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_CalcularCalorias"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btn3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/iconCalcularCalorias"
+        app:layout_constraintTop_toTopOf="@id/iconCalcularCalorias"
+        android:layout_marginRight="15dp"
+        android:text="@string/button_ACESSAR"
+        android:textSize="20dp"
+        android:fontFamily="@font/khand_medium"
+        />
+
+    <View
+        android:id="@+id/divider_3"
+        android:layout_width="370dp"
+        android:layout_height="1dp"
+        android:background="@drawable/line_1"
+        app:layout_constraintTop_toBottomOf="@id/button_CalcularCalorias"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="25dp"
+        />
+
+    <View
+        android:id="@+id/iconSobreoAPP"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/icon_sobreoapp"
+        app:layout_constraintStart_toStartOf="@id/iconCalcularCalorias"
+        app:layout_constraintTop_toBottomOf="@id/divider_3"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="27dp"/>
+
+    <TextView
+        android:id="@+id/labelSobreoApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/iconSobreoAPP"
+        app:layout_constraintTop_toTopOf="@id/iconSobreoAPP"
+        app:layout_constraintStart_toEndOf="@id/iconCalcularIMC"
+        android:layout_marginLeft="12dp"
+        android:fontFamily="@font/khand_medium"
+        android:text="@string/label_sobreOApp"
+        android:textSize="20dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_SobreoApp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btn3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/iconSobreoAPP"
+        app:layout_constraintTop_toTopOf="@id/iconSobreoAPP"
+        android:layout_marginRight="15dp"
+        android:text="@string/button_ACESSAR"
+        android:textSize="20dp"
+        android:fontFamily="@font/khand_medium"
+        />
+
+    <View
+        android:id="@+id/divider_4"
+        android:layout_width="370dp"
+        android:layout_height="1dp"
+        android:background="@drawable/line_1"
+        app:layout_constraintTop_toBottomOf="@id/button_SobreoApp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="25dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/btn1"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:background="@drawable/icon_meuusuario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="13.5dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

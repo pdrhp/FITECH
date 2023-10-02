@@ -10,5 +10,8 @@
     <string name="button_registrar">REGISTRAR</string>
     <string name="label_calculadoraIMC">Calculadora IMC</string>
     <string name="button_ACESSAR">ACESSAR</string>
+    <string name="label_listaDeExercicio">Lista de Exercícios</string>
+    <string name="label_calculoDeCalorias">Calculadora De Calorias Diárias</string>
+    <string name="label_sobreOApp">Sobre o app</string>
 
 </resources>
