@@ -96,7 +96,7 @@
         app:layout_constraintStart_toStartOf="@id/etInputSenhaCadastro"
         app:layout_constraintTop_toBottomOf="@id/cbTermos"
         android:layout_marginTop="8dp"
-        android:text="@string/check_box_termos"
+        android:text="@string/check_box_notEnov"
         android:drawableLeft="@drawable/checkbox_custom"
         android:fontFamily="@font/khand_light"
         android:textFontWeight="1000"

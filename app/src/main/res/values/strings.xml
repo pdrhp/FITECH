@@ -7,6 +7,7 @@
     <string name="label_ou">OU</string>
     <string name="button_cadastrar">CADASTRAR</string>
     <string name="check_box_termos">Concordo com os termos e serviços.</string>
+    <string name="check_box_notEnov">Quero receber noticias e promoções do aplicativo no meu email.</string>
     <string name="button_registrar">REGISTRAR</string>
     <string name="label_calculadoraIMC">Calculadora IMC</string>
     <string name="button_ACESSAR">ACESSAR</string>
