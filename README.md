@@ -14,11 +14,6 @@ Este aplicativo foi desenvolvido para fins academicos e de aprendizados.
  - [API Fitness Calculator](https://rapidapi.com/malaaddincelik/api/fitness-calculator/details)
 
 
-## Demonstração
-
-Insira um gif ou um link de alguma demonstração
-
-
 ## Aprendizados
 
 Este projeto serviu de exercicios para fixar conceitos do Kotlin e desenvolvimento android, neste projeto foi usado os seguintes conceitos e funcionalidades:
