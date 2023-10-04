@@ -232,6 +232,7 @@
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <View
+        android:id="@+id/button_MeuUsuario"
         android:layout_width="43dp"
         android:layout_height="43dp"
         android:background="@drawable/icon_meuusuario"

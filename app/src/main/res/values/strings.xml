@@ -14,5 +14,7 @@
     <string name="label_listaDeExercicio">Lista de Exercícios</string>
     <string name="label_calculoDeCalorias">Calculadora De Calorias Diárias</string>
     <string name="label_sobreOApp">Sobre o app</string>
+    <string name="popup_sair">Sair</string>
+    <string name="popup_MinhaConta">Minha Conta</string>
 
 </resources>
