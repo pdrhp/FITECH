@@ -11,6 +11,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.pedrohucb.fitech.R
 import com.pedrohucb.fitech.databinding.ActivityTelaPrincipalBinding
+import com.pedrohucb.fitech.view.calculadoraimc.CalculadoraIMC
 import com.pedrohucb.fitech.view.formlogin.FormLogin
 
 class TelaPrincipal : AppCompatActivity() {
@@ -21,11 +22,20 @@ class TelaPrincipal : AppCompatActivity() {
         binding = ActivityTelaPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        binding.buttonCalculadoraIMC.setOnClickListener {
+            NavegarTelaCalculadoraIMC();
+        }
 
         binding.buttonMeuUsuario.setOnClickListener{ view ->
             AbrirPopUpMeuUsuario();
         }
+    }
+
+
+    private fun NavegarTelaCalculadoraIMC(){
+        val intent = Intent(this, CalculadoraIMC::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun AbrirPopUpMeuUsuario(){
