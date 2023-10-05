@@ -16,5 +16,6 @@
     <string name="label_sobreOApp">Sobre o app</string>
     <string name="popup_sair">Sair</string>
     <string name="popup_MinhaConta">Minha Conta</string>
+    <string name="IMC_title">IMC</string>
 
 </resources>
