@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/btn1"/>
+        android:background="@drawable/btn1" />
 
     <TextView
         android:id="@+id/logoFITECH_CalculadoraIMC"
@@ -59,6 +59,8 @@
         android:layout_marginTop="10dp"
         />
 
+    <!-- input Peso -->
+
     <EditText
         android:id="@+id/inputPesoIMC"
         android:layout_width="310dp"
@@ -67,17 +69,165 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginLeft="50dp"
-        android:background="#D9D9D9"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn5"
+        android:hint="@string/Peso_PlaceHolder"
+        android:fontFamily="@font/khand_medium"
+        android:paddingLeft="10dp"
         />
     
     <View
-        android:id="@+id/frameIconPeso"
+        android:id="@+id/frameIconPesoIMC"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@drawable/btn3"
-        app:layout_constraintTop_toBottomOf="@id/titleIMC"
+        android:background="@drawable/btn4"
+        app:layout_constraintBottom_toBottomOf="@id/inputPesoIMC"
         app:layout_constraintEnd_toStartOf="@id/inputPesoIMC"
         />
+
+    <View
+        android:id="@+id/iconInputPesoIMC"
+        android:layout_width="34.3dp"
+        android:layout_height="20.64dp"
+        android:background="@drawable/icon_inputpesoimc"
+        app:layout_constraintStart_toStartOf="@id/frameIconPesoIMC"
+        app:layout_constraintEnd_toEndOf="@id/frameIconPesoIMC"
+        app:layout_constraintBottom_toBottomOf="@id/frameIconPesoIMC"
+        app:layout_constraintTop_toTopOf="@id/frameIconPesoIMC"
+        />
+
+    <!-- input Altura -->
+
+    <EditText
+        android:id="@+id/inputAlturaIMC"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/inputPesoIMC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn5"
+        android:hint="@string/Altura_PlaceHolder"
+        android:fontFamily="@font/khand_medium"
+        android:paddingLeft="10dp"
+        />
+
+    <View
+        android:id="@+id/frameIconAlturaIMC"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btn4"
+        app:layout_constraintBottom_toBottomOf="@id/inputAlturaIMC"
+        app:layout_constraintEnd_toStartOf="@id/inputAlturaIMC"
+        />
+
+    <View
+        android:id="@+id/iconInputAlturaIMC"
+        android:layout_width="28.8dp"
+        android:layout_height="30.28dp"
+        android:background="@drawable/icon_altura"
+        app:layout_constraintStart_toStartOf="@id/frameIconAlturaIMC"
+        app:layout_constraintEnd_toEndOf="@id/frameIconAlturaIMC"
+        app:layout_constraintBottom_toBottomOf="@id/frameIconAlturaIMC"
+        app:layout_constraintTop_toTopOf="@id/frameIconAlturaIMC"
+        />
+
+    <!-- button Calcular -->
+    
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonCalcularIMC"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btn1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputAlturaIMC"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/khand_medium"
+        android:text="@string/text_button_Calcular"
+        android:textSize="28dp"
+        />
+
+    <!-- container Resultado -->
+
+    <View
+        android:id="@+id/container_Label_Resultado"
+        android:layout_width="360dp"
+        android:layout_height="30dp"
+        android:background="@drawable/container_resultado_upper_part_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonCalcularIMC"
+        android:layout_marginTop="40dp"
+        />
+
+    <TextView
+        android:id="@+id/textViewLabelResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/container_Label_Resultado"
+        app:layout_constraintBottom_toBottomOf="@id/container_Label_Resultado"
+        app:layout_constraintStart_toStartOf="@id/container_Label_Resultado"
+        app:layout_constraintEnd_toEndOf="@id/container_Label_Resultado"
+        android:text="@string/label_container_calcular"
+        android:fontFamily="@font/khand_medium"
+        android:textSize="20dp"
+        />
+
+    <View
+        android:id="@+id/container_resultado_IMC"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/container_Label_Resultado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/container_resultado_under_part_style"
+        />
+
+    <TextView
+        android:id="@+id/textViewResultadoIMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/container_resultado_IMC"
+        app:layout_constraintBottom_toBottomOf="@id/container_resultado_IMC"
+        app:layout_constraintLeft_toLeftOf="@id/container_resultado_IMC"
+        app:layout_constraintRight_toRightOf="@id/container_resultado_IMC"
+        android:fontFamily="@font/khand_medium"
+        android:textSize="25dp"
+        />
+
+
+    <!-- button Resultados Anteriores -->
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonCalculosAnteriores"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btn1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_resultado_IMC"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/khand_medium"
+        android:text="@string/button_Calculos_Anteriores"
+        android:textSize="23dp"
+        android:drawableLeft="@drawable/icon_calculoanterior"
+        android:paddingLeft="20dp"
+        />
+
+
+    <!-- Footer -->
+
+    <View
+        android:id="@+id/frameFooterCalculadoraIMC"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/btn1" />
+
+
 
 
 
