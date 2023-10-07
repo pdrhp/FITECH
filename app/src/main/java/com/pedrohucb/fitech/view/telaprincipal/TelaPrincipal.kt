@@ -35,7 +35,6 @@ class TelaPrincipal : AppCompatActivity() {
     private fun NavegarTelaCalculadoraIMC(){
         val intent = Intent(this, CalculadoraIMC::class.java)
         startActivity(intent)
-        finish()
     }
 
     private fun AbrirPopUpMeuUsuario(){

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.FITECH"
         tools:targetApi="31">
         <activity
+            android:name=".view.calculadoraimc.TelaHistoricoDeCalculos"
+            android:exported="false" />
+        <activity
             android:name=".view.calculadoraimc.CalculadoraIMC"
             android:exported="false" />
         <activity
