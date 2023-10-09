@@ -24,5 +24,8 @@
     <string name="button_Calculos_Anteriores">Calculos Anteriores</string>
     <string name="ListaDeExercicios_title">Lista de exercícios</string>
     <string name="NomeRegiaoExercicio">Região do Exercicio</string>
+    <string name="nomeExercicio">Nome do Exercicio</string>
+    <string name="dificuldadeExercicio">Dificuldade do Exercicio</string>
+    <string name="finalidadeExercicio">Finalidade do Exercicio</string>
 
 </resources>
