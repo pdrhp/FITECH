@@ -6,4 +6,80 @@
     android:layout_height="match_parent"
     tools:context=".view.listexercicios.ListExercicios">
 
+    <!-- Header $ Logo -->
+
+    <View
+        android:id="@+id/frameHeaderListaExercicios"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/btn1" />
+
+    <TextView
+        android:id="@+id/logoFITECH_ListaExercicios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/khand_bold"
+        android:text="@string/app_name"
+        android:textSize="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/line_1"
+        android:layout_width="68dp"
+        android:layout_height="2dp"
+        android:layout_marginLeft="-70dp"
+        android:layout_marginTop="-18dp"
+        android:background="@drawable/line_1"
+        app:layout_constraintStart_toEndOf="@id/logoFITECH_ListaExercicios"
+        app:layout_constraintTop_toBottomOf="@+id/logoFITECH_ListaExercicios" />
+
+    <View
+        android:id="@+id/iconButtonVoltarTelaListaExercicios"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/backwards_arrow"
+        app:layout_constraintStart_toStartOf="@id/frameHeaderListaExercicios"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/frameHeaderListaExercicios"
+        android:layout_marginLeft="10dp"
+        />
+
+    <!-- Titulo -->
+
+    <TextView
+        android:id="@+id/titleListaExercicios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ListaDeExercicios_title"
+        android:textSize="40dp"
+        android:fontFamily="@font/khand_bold"
+        app:layout_constraintTop_toBottomOf="@id/frameHeaderListaExercicios"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        />
+
+    <!-- Lista de exercicios -->
+
+    <ListView
+        android:id="@+id/listViewListaDeExercicios"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/titleListaExercicios"
+        app:layout_constraintBottom_toTopOf="@id/frameFooterListaExercicios"
+        />
+
+    <!-- Footer -->
+
+    <View
+        android:id="@+id/frameFooterListaExercicios"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/btn1" />
+    
 </androidx.constraintlayout.widget.ConstraintLayout>

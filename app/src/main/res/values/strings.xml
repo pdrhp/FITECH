@@ -22,5 +22,6 @@
     <string name="text_button_Calcular">Calcular</string>
     <string name="label_container_calcular">Resultado</string>
     <string name="button_Calculos_Anteriores">Calculos Anteriores</string>
+    <string name="ListaDeExercicios_title">Lista de exercícios</string>
 
 </resources>
