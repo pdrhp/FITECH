@@ -13,6 +13,7 @@ import com.pedrohucb.fitech.R
 import com.pedrohucb.fitech.databinding.ActivityTelaPrincipalBinding
 import com.pedrohucb.fitech.view.calculadoraimc.CalculadoraIMC
 import com.pedrohucb.fitech.view.formlogin.FormLogin
+import com.pedrohucb.fitech.view.listexercicios.ListExercicios
 
 class TelaPrincipal : AppCompatActivity() {
 
@@ -26,12 +27,21 @@ class TelaPrincipal : AppCompatActivity() {
             NavegarTelaCalculadoraIMC();
         }
 
+        binding.buttonListaDeExercicios.setOnClickListener {
+            NavegarTelaListaExercicios();
+        }
+
         binding.buttonMeuUsuario.setOnClickListener{ view ->
             AbrirPopUpMeuUsuario();
         }
     }
 
 
+
+    private fun NavegarTelaListaExercicios(){
+        val intent = Intent(this, ListExercicios::class.java)
+        startActivity(intent)
+    }
     private fun NavegarTelaCalculadoraIMC(){
         val intent = Intent(this, CalculadoraIMC::class.java)
         startActivity(intent)
