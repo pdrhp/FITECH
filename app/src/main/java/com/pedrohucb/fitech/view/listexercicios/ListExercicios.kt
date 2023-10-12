@@ -1,5 +1,6 @@
 package com.pedrohucb.fitech.view.listexercicios
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.pedrohucb.fitech.R
