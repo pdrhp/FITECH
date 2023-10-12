@@ -18,6 +18,19 @@ class ListExercicios : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        binding.listViewListaDeExercicios.adapter = AdapterRegiaoExercico(this, RegiaoDosExerciciosRepository.getRegiaoDosExercicios())
+        binding.listViewListaDeRegioes.adapter = AdapterRegiaoExercico(this, RegiaoDosExerciciosRepository.getRegiaoDosExercicios())
+
+        binding.listViewListaDeRegioes.setOnItemClickListener { parent, view, position, id ->
+            NavegarParaASubList(position)
+        }
+
     }
+
+    private fun NavegarParaASubList(position : Int){
+        val intent = Intent(this, ListExerciciosSubList::class.java)
+        startActivity(intent)
+
+        intent.putExtra("position", position)
+    }
+
 }

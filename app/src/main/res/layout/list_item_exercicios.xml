@@ -26,6 +26,7 @@
             >
 
             <TextView
+                android:id="@+id/TextViewNomeDoExercicio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/nomeExercicio"
@@ -34,6 +35,7 @@
                 />
 
             <TextView
+                android:id="@+id/TextViewFinalidadeExercicio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/finalidadeExercicio"
@@ -42,6 +44,7 @@
                 />
 
             <TextView
+                android:id="@+id/TextViewDificuldadeExercicio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/dificuldadeExercicio"
