@@ -1,5 +1,6 @@
 package com.pedrohucb.fitech.view.listexercicios
 
+import android.content.Intent
 import android.media.MediaPlayer.OnCompletionListener
 import android.net.Uri
 import android.os.Bundle
@@ -34,6 +35,10 @@ class ExercicioDetailed : AppCompatActivity() {
             exercicioList = ExercicioRepositoryAbdominais.getExercicios()
         }
 
+        binding.iconButtonVoltarTelaExercicioDetailed.setOnClickListener {
+            VoltarTelaAnterior()
+        }
+
         val video = exercicioList[positionList].videoPackage
         val videoURI = Uri.parse("android.resource://${packageName}/${video}")
 
@@ -52,5 +57,11 @@ class ExercicioDetailed : AppCompatActivity() {
         binding.titleExercicioDetailed.text = exercicioList[positionList].tituloExercicio
         binding.descricaoExercicioDetailed.text = exercicioList[positionList].descricaoExercicio
         binding.videoViewExercicio.start()
+    }
+
+    private fun VoltarTelaAnterior(){
+        val intent = Intent(this, ListExerciciosSubList::class.java)
+        startActivity(intent)
+        finish()
     }
 }
