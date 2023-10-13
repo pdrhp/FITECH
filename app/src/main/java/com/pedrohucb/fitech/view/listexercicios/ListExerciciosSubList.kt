@@ -7,6 +7,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.pedrohucb.fitech.R
 import com.pedrohucb.fitech.databinding.ActivityListExerciciosSubListBinding
 import com.pedrohucb.fitech.view.listexercicios.Adapters.AdapterExercicio
+import com.pedrohucb.fitech.view.listexercicios.models.ExercicioRepositoryInferiores
 import com.pedrohucb.fitech.view.listexercicios.models.ExercicioRepositorySuperiores
 
 class ListExerciciosSubList : AppCompatActivity() {
@@ -21,6 +22,9 @@ class ListExerciciosSubList : AppCompatActivity() {
 
         if(position == 0){
         binding.listViewListaDeExercicios.adapter = AdapterExercicio(this, ExercicioRepositorySuperiores.getExercicios())
+        }
+        if(position == 1){
+            binding.listViewListaDeExercicios.adapter = AdapterExercicio(this, ExercicioRepositoryInferiores.getExercicios())
         }
 
 
