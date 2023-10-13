@@ -28,7 +28,7 @@ object ExercicioRepositoryInferiores {
             Exercicio(R.drawable.inf_assisted_squats_img, "Agachamento com apoio", "Quadríceps, glúteos e músculos próximos", "Dificuldade: Fácil"),
             Exercicio(R.drawable.inf_half_squats_img, "Agachamento Parcial", "Quadríceps, glúteos e músculos próximos", "Dificuldade: Fácil/Médio"),
             Exercicio(R.drawable.inf_full_squat_img, "Agachamento Completo", "Quadríceps, glúteos e músculos próximos", "Dificuldade: Médio"),
-            Exercicio(R.drawable.inf_assisted_one_leg_squats_img, "Agachamento de uma pena com apoio", "Quadríceps, glúteos e músculos próximos", "Dificuldade: Difícil"),
+            Exercicio(R.drawable.inf_assisted_one_leg_squats_img, "Agachamento de uma perna com apoio", "Quadríceps, glúteos e músculos próximos", "Dificuldade: Difícil"),
             Exercicio(R.drawable.inf_one_leg_squats_img, "Agachamento de uma perna", "Quadríceps, glúteos e músculos próximos", "Dificuldade: Muito Difícil"),
         )
     }
@@ -36,6 +36,12 @@ object ExercicioRepositoryInferiores {
 
 object ExercicioRepositoryAbdominais {
     fun getExercicios(): List<Exercicio> {
-        return listOf()
+        return listOf(
+            Exercicio(R.drawable.abd_knee_raises_img, "Elevação de joelhos", "Musculatura abdominal e lombar", "Dificuldade: Fácil"),
+            Exercicio(R.drawable.abd_advanced_knee_raises_img, "Elevação de joelhos avançada", "Musculatura abdominal e lombar", "Dificuldade: Fácil/Média"),
+            Exercicio(R.drawable.abd_full_leg_raises_img, "Elevação de pernas", "Musculatura abdominal e lombar", "Dificuldade: Média"),
+            Exercicio(R.drawable.abd_hanging_knee_raises_img, "Elevação de joelhos suspensa", "Musculatura abdominal e lombar", "Dificuldade: Média/Difícil"),
+            Exercicio(R.drawable.abd_hanging_leg_raises_img, "Elevação de pernas suspensa", "Musculatura abdominal e lombar", "Dificuldade: Difícil"),
+        )
     }
 }
