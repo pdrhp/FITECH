@@ -31,7 +31,9 @@ class ListExerciciosSubList : AppCompatActivity() {
             binding.listViewListaDeExercicios.adapter = AdapterExercicio(this, ExercicioRepositoryAbdominais.getExercicios())
         }
         
-        binding.listViewListaDeExercicios.setOnItemClickListener { parent, view, position, id ->  }
+        binding.listViewListaDeExercicios.setOnItemClickListener { parent, view, position, id ->
+
+        }
 
 
         binding.iconButtonVoltarTelaListaExercicios.setOnClickListener {

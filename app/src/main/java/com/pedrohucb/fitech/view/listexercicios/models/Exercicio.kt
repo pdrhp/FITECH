@@ -7,7 +7,7 @@ data class Exercicio(
     val tituloExercicio : String,
     val finalidadeExercicio : String,
     val dificuldadeExercicio : String,
-    val id : Int
+    val id : Int,
     val descricaoExercicio : String
 )
 
