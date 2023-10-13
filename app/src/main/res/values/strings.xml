@@ -27,5 +27,6 @@
     <string name="nomeExercicio">Nome do Exercicio</string>
     <string name="dificuldadeExercicio">Dificuldade do Exercicio</string>
     <string name="finalidadeExercicio">Finalidade do Exercicio</string>
+    <string name="descricaoExercicio">Descrição do Exercicio</string>
 
 </resources>
