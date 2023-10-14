@@ -110,6 +110,7 @@
         app:layout_constraintTop_toBottomOf="@id/inputIdadeTBM"
         app:layout_constraintStart_toStartOf="@id/inputIdadeTBM"
         android:layout_marginTop="30dp"
+        android:paddingLeft="10dp"
         />
 
     <View
@@ -212,6 +213,7 @@
         app:layout_constraintTop_toBottomOf="@id/inputAlturaTBM"
         app:layout_constraintStart_toStartOf="@id/inputAlturaTBM"
         android:layout_marginTop="30dp"
+        android:paddingLeft="10dp"
         />
 
     <View

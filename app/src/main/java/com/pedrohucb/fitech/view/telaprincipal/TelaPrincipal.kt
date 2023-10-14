@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.pedrohucb.fitech.R
 import com.pedrohucb.fitech.databinding.ActivityTelaPrincipalBinding
 import com.pedrohucb.fitech.view.calculadoraimc.CalculadoraIMC
+import com.pedrohucb.fitech.view.calculadoratmb.calculadoratmb
 import com.pedrohucb.fitech.view.formlogin.FormLogin
 import com.pedrohucb.fitech.view.listexercicios.ListExercicios
 
@@ -31,6 +32,10 @@ class TelaPrincipal : AppCompatActivity() {
             NavegarTelaListaExercicios();
         }
 
+        binding.buttonCalcularCalorias.setOnClickListener {
+            NavegarTelaCalculadoraTMB()
+        }
+
         binding.buttonMeuUsuario.setOnClickListener{ view ->
             AbrirPopUpMeuUsuario();
         }
@@ -44,6 +49,10 @@ class TelaPrincipal : AppCompatActivity() {
     }
     private fun NavegarTelaCalculadoraIMC(){
         val intent = Intent(this, CalculadoraIMC::class.java)
+        startActivity(intent)
+    }
+    private fun NavegarTelaCalculadoraTMB(){
+        val intent = Intent(this, calculadoratmb::class.java)
         startActivity(intent)
     }
 
