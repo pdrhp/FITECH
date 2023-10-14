@@ -36,7 +36,7 @@ class ExercicioDetailed : AppCompatActivity() {
         }
 
         binding.iconButtonVoltarTelaExercicioDetailed.setOnClickListener {
-            VoltarTelaAnterior()
+            VoltarTelaAnterior(regiao)
         }
 
         val video = exercicioList[positionList].videoPackage
@@ -59,8 +59,9 @@ class ExercicioDetailed : AppCompatActivity() {
         binding.videoViewExercicio.start()
     }
 
-    private fun VoltarTelaAnterior(){
+    private fun VoltarTelaAnterior(regiao : Int){
         val intent = Intent(this, ListExerciciosSubList::class.java)
+        intent.putExtra("position", regiao)
         startActivity(intent)
         finish()
     }
