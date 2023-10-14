@@ -17,7 +17,9 @@
     <string name="popup_sair">Sair</string>
     <string name="popup_MinhaConta">Minha Conta</string>
     <string name="IMC_title">IMC</string>
+    <string name="TMB_title">TMB</string>
     <string name="Peso_PlaceHolder">Peso (Kg)</string>
+    <string name="idade_PlaceHolder">Idade (Anos)</string>
     <string name="Altura_PlaceHolder">Altura (Cm)</string>
     <string name="text_button_Calcular">Calcular</string>
     <string name="label_container_calcular">Resultado</string>
