@@ -30,5 +30,8 @@
     <string name="dificuldadeExercicio">Dificuldade do Exercicio</string>
     <string name="finalidadeExercicio">Finalidade do Exercicio</string>
     <string name="descricaoExercicio">Descrição do Exercicio</string>
+    <string name="esqueceu_sua_senha_desc">Esqueceu sua senha?\nInsira seu e-mail para receber as instruções\n de redefinição de senha no seu email</string>
+    <string name="esqueceu_sua_senha_button">Redefinir Senha</string>
+    <string name="button_cancelar">Cancelar</string>
 
 </resources>
