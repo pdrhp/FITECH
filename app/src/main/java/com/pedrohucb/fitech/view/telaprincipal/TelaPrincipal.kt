@@ -15,6 +15,7 @@ import com.pedrohucb.fitech.view.calculadoraimc.CalculadoraIMC
 import com.pedrohucb.fitech.view.calculadoratmb.calculadoratmb
 import com.pedrohucb.fitech.view.formlogin.FormLogin
 import com.pedrohucb.fitech.view.listexercicios.ListExercicios
+import com.pedrohucb.fitech.view.sobreoapp.SobreOApp
 
 class TelaPrincipal : AppCompatActivity() {
 
@@ -53,6 +54,11 @@ class TelaPrincipal : AppCompatActivity() {
     }
     private fun NavegarTelaCalculadoraTMB(){
         val intent = Intent(this, calculadoratmb::class.java)
+        startActivity(intent)
+    }
+
+    private fun NavegarTelaSobreOApp(){
+        val intent = Intent(this, SobreOApp::class.java)
         startActivity(intent)
     }
 

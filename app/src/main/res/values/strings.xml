@@ -33,5 +33,7 @@
     <string name="esqueceu_sua_senha_desc">Esqueceu sua senha?\nInsira seu e-mail para receber as instruções\n de redefinição de senha no seu email</string>
     <string name="esqueceu_sua_senha_button">Redefinir Senha</string>
     <string name="button_cancelar">Cancelar</string>
+    <string name="title_SobreOApp">Sobre o App</string>
+    <string name="descSobreoApp">Aplicativo de atividade física para fins de acadêmicos, desenvolvido por alunos do curso de Análise e Desenvolvimento de Sistemas da Universidade Católica de Brasília.</string>
 
 </resources>
