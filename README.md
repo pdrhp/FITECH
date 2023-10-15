@@ -62,6 +62,6 @@ git clone https://github.com/pdrhp/FITECH/
 API_KEY = "SUA_API_KEY_AQUI"
 ```
 
-4. Sincronize o projeto, e rode a aplicação no Emulador para verificar se tudo está certo.
+6. Sincronize o projeto, e rode a aplicação no Emulador para verificar se tudo está certo.
 
 
