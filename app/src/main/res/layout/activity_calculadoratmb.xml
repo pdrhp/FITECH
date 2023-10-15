@@ -247,7 +247,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inputNvAtvFisTBM"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:fontFamily="@font/khand_medium"
         android:text="@string/text_button_Calcular"
         android:textSize="28dp"
@@ -263,7 +263,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonCalcularTBM"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         />
 
     <TextView
