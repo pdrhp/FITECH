@@ -1,10 +1,21 @@
 package com.pedrohucb.fitech.view.calculadoratmb
 
+import android.content.pm.ApplicationInfo
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import com.google.firebase.BuildConfig
+import com.google.gson.Gson
 import com.pedrohucb.fitech.R
 import com.pedrohucb.fitech.databinding.ActivityCalculadoratmbBinding
+import com.pedrohucb.fitech.view.calculadoratmb.models.DailyCaloriesRequest
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.OkHttpClient
+import okhttp3.Request
 
 class calculadoratmb : AppCompatActivity() {
 
@@ -21,6 +32,9 @@ class calculadoratmb : AppCompatActivity() {
         val spinnerGenderAdapter = ArrayAdapter(this, R.layout.spinner_dropdown_item, genderItems)
         val spinnerAtvFisAdapter = ArrayAdapter(this, R.layout.spinner_dropdown_item, atvFisItems)
 
+        val applicationInfo : ApplicationInfo = application.packageManager.getApplicationInfo(application.packageName, PackageManager.GET_META_DATA)
+        val apiKey = applicationInfo.metaData["API_KEY"].toString()
+
 
 
         binding.inputGeneroTBM.adapter = spinnerGenderAdapter
@@ -33,13 +47,43 @@ class calculadoratmb : AppCompatActivity() {
             val altura = binding.inputAlturaTBM.text.toString()
             val nvatvfis = NvAtvOptionSelector(binding.inputNvAtvFisTBM.selectedItem.toString())
 
+            CoroutineScope(Dispatchers.IO).launch {
+                val result = getCaloriasDiarias(idade, genero, altura, peso, nvatvfis, apiKey)
+
+                withContext(Dispatchers.Main){
+                    if (result.data.BMR.isNotEmpty()){
+                        binding.textViewResultadoIMC.text = "${result.data.BMR} Calorias por dia"
+                    }
+                    else {
+                        binding.textViewResultadoIMC.text = "Resultado não encontrado"
+                    }
+                }
+            }
         }
     }
 
 
 
+    private fun getCaloriasDiarias(idade:String, genero:String, altura:String, peso:String, nvAtvFis:String, apikey : String): DailyCaloriesRequest {
+        val client = OkHttpClient();
 
-    fun HomemOuMulher(genero: String): String{
+        val request = Request.Builder()
+            .url("https://fitness-calculator.p.rapidapi.com/dailycalorie?age=${idade}&gender=${genero}&height=${altura}&weight=${peso}&activitylevel=${nvAtvFis}")
+            .get()
+            .addHeader("X-RapidAPI-Key", apikey)
+            .addHeader("X-RapidAPI-Host", "fitness-calculator.p.rapidapi.com")
+            .build()
+
+        val response = client.newCall(request).execute();
+
+        val responseString = response.body!!.string()
+
+        val bmr = Gson().fromJson(responseString, DailyCaloriesRequest::class.java)
+
+        return bmr;
+    }
+
+    private fun HomemOuMulher(genero: String): String{
         if (genero == "Masculino"){
             return "male"
         }else{
@@ -47,7 +91,7 @@ class calculadoratmb : AppCompatActivity() {
         }
     }
 
-    fun NvAtvOptionSelector(nivel : String): String{
+    private fun NvAtvOptionSelector(nivel : String): String{
         if (nivel == "Sedentario"){
             return "level_1"
         }
