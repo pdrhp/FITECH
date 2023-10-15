@@ -37,9 +37,15 @@ class TelaPrincipal : AppCompatActivity() {
             NavegarTelaCalculadoraTMB()
         }
 
+        binding.buttonSobreoApp.setOnClickListener{
+            NavegarTelaSobreOApp()
+        }
+
         binding.buttonMeuUsuario.setOnClickListener{ view ->
             AbrirPopUpMeuUsuario();
         }
+
+
     }
 
 
