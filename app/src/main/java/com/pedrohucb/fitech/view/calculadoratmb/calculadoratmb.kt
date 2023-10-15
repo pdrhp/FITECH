@@ -21,6 +21,8 @@ class calculadoratmb : AppCompatActivity() {
         val spinnerGenderAdapter = ArrayAdapter(this, R.layout.spinner_dropdown_item, genderItems)
         val spinnerAtvFisAdapter = ArrayAdapter(this, R.layout.spinner_dropdown_item, atvFisItems)
 
+
+
         binding.inputGeneroTBM.adapter = spinnerGenderAdapter
         binding.inputNvAtvFisTBM.adapter = spinnerAtvFisAdapter
 
@@ -31,9 +33,11 @@ class calculadoratmb : AppCompatActivity() {
             val altura = binding.inputAlturaTBM.text.toString()
             val nvatvfis = NvAtvOptionSelector(binding.inputNvAtvFisTBM.selectedItem.toString())
 
-
         }
     }
+
+
+
 
     fun HomemOuMulher(genero: String): String{
         if (genero == "Masculino"){
