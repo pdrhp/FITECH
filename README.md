@@ -53,7 +53,15 @@ git clone https://github.com/pdrhp/FITECH/
 
 - [Passo a passo para configurar o FirebaseAuth no projeto](https://firebase.google.com/docs/auth/android/password-auth?hl=pt-br#before_you_begin)
 
-3. Sincronize o projeto, e rode a aplicação no Emulador para verificar se tudo está certo.
+3. Depois é necessario criar uma conta no site [RapidAPI](https://rapidapi.com/), e se inscrever para usar a API [Fitness Calculator](https://rapidapi.com/malaaddincelik/api/fitness-calculator)
 
+4. Copie sua API key indo no dashboard da RapidAPI ([rapidapi.com/developer/dashboard](https://rapidapi.com/developer/dashboard)), va na aba de My apps, e entre na parte de Authentication da sua aplicação.
+
+5. Cole sua API key no arquivo `local.properties` desta maneira:
+```
+API_KEY = "SUA_API_KEY_AQUI"
+```
+
+6. Sincronize o projeto, e rode a aplicação no Emulador para verificar se tudo está certo.
 
 
