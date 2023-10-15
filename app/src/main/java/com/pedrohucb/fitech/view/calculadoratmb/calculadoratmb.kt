@@ -1,5 +1,6 @@
 package com.pedrohucb.fitech.view.calculadoratmb
 
+import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import com.google.gson.Gson
 import com.pedrohucb.fitech.R
 import com.pedrohucb.fitech.databinding.ActivityCalculadoratmbBinding
 import com.pedrohucb.fitech.view.calculadoratmb.models.DailyCaloriesRequest
+import com.pedrohucb.fitech.view.telaprincipal.TelaPrincipal
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -40,6 +42,8 @@ class calculadoratmb : AppCompatActivity() {
         binding.inputGeneroTBM.adapter = spinnerGenderAdapter
         binding.inputNvAtvFisTBM.adapter = spinnerAtvFisAdapter
 
+        binding.iconButtonVoltarTelaTMB.setOnClickListener { VoltarTela() }
+
         binding.buttonCalcularTBM.setOnClickListener {
             val idade = binding.inputIdadeTBM.text.toString()
             val genero = HomemOuMulher(binding.inputGeneroTBM.selectedItem.toString())
@@ -52,17 +56,21 @@ class calculadoratmb : AppCompatActivity() {
 
                 withContext(Dispatchers.Main){
                     if (result.data.BMR.isNotEmpty()){
-                        binding.textViewResultadoIMC.text = "${result.data.BMR} Calorias por dia"
+                        binding.textViewResultadoTMB.text = "${result.data.BMR} Calorias por dia"
                     }
                     else {
-                        binding.textViewResultadoIMC.text = "Resultado não encontrado"
+                        binding.textViewResultadoTMB.text = "Resultado não encontrado"
                     }
                 }
             }
         }
     }
 
-
+    private fun VoltarTela(){
+        val intent = Intent(this, TelaPrincipal::class.java)
+        startActivity(intent)
+        finish()
+    }
 
     private fun getCaloriasDiarias(idade:String, genero:String, altura:String, peso:String, nvAtvFis:String, apikey : String): DailyCaloriesRequest {
         val client = OkHttpClient();

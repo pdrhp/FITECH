@@ -280,7 +280,7 @@
         />
 
     <View
-        android:id="@+id/container_resultado_IMC"
+        android:id="@+id/container_resultado_TMB"
         android:layout_width="360dp"
         android:layout_height="50dp"
         app:layout_constraintTop_toBottomOf="@id/container_Label_Resultado"
@@ -290,13 +290,13 @@
         />
 
     <TextView
-        android:id="@+id/textViewResultadoIMC"
+        android:id="@+id/textViewResultadoTMB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/container_resultado_IMC"
-        app:layout_constraintBottom_toBottomOf="@id/container_resultado_IMC"
-        app:layout_constraintLeft_toLeftOf="@id/container_resultado_IMC"
-        app:layout_constraintRight_toRightOf="@id/container_resultado_IMC"
+        app:layout_constraintTop_toTopOf="@id/container_resultado_TMB"
+        app:layout_constraintBottom_toBottomOf="@id/container_resultado_TMB"
+        app:layout_constraintLeft_toLeftOf="@id/container_resultado_TMB"
+        app:layout_constraintRight_toRightOf="@id/container_resultado_TMB"
         android:fontFamily="@font/khand_medium"
         android:textSize="25dp"
         />
