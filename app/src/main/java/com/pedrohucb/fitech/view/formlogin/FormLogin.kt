@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.pedrohucb.fitech.R
 import com.pedrohucb.fitech.databinding.ActivityFormLoginBinding
 import com.pedrohucb.fitech.view.formcadastro.FormCadastro
+import com.pedrohucb.fitech.view.formesqueceusuasenha.FormEsqueceuSuaSenha
 import com.pedrohucb.fitech.view.telaprincipal.TelaPrincipal
 
 class FormLogin : AppCompatActivity() {
@@ -51,10 +52,19 @@ class FormLogin : AppCompatActivity() {
             }
         }
 
+        binding.tvLabelEsqueceuSuaSenha.setOnClickListener {
+            NavegarTelaEsqueceuSuaSenha()
+        }
+
         binding.btCadastrarLogin.setOnClickListener{
             val intent = Intent(this, FormCadastro::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun NavegarTelaEsqueceuSuaSenha(){
+        val intent = Intent(this, FormEsqueceuSuaSenha::class.java)
+        startActivity(intent)
     }
     private fun NavegarParaATelaPrincipal(){
         val intent = Intent(this, TelaPrincipal::class.java)
