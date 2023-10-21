@@ -74,6 +74,7 @@
         android:hint="@string/Peso_PlaceHolder"
         android:fontFamily="@font/khand_medium"
         android:paddingLeft="10dp"
+        android:inputType="number"
         />
     
     <View
@@ -111,6 +112,7 @@
         android:hint="@string/Altura_PlaceHolder"
         android:fontFamily="@font/khand_medium"
         android:paddingLeft="10dp"
+        android:inputType="number"
         />
 
     <View
