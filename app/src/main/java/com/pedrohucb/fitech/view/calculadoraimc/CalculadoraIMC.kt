@@ -34,22 +34,34 @@ class CalculadoraIMC : AppCompatActivity() {
         }
 
         binding.buttonCalcularIMC.setOnClickListener {
+
+            if(binding.inputPesoIMC.text.toString().isEmpty() || binding.inputAlturaIMC.text.isEmpty()){
+                binding.textViewResultadoIMC.text = "Valores invalidos"
+                return@setOnClickListener
+            }
             val peso = binding.inputPesoIMC.text.toString()
             val altura = binding.inputAlturaIMC.text.toString()
 
-            val imc = IMC(peso, altura);
 
-            val resultado = String.format("%.2f", imc)
-            val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")
-            val dataExata = LocalDateTime.now().format(formatter).toString()
 
-            binding.textViewResultadoIMC.text = resultado
+            if(peso.toFloat() <= 0 || altura.toFloat() <= 0){
+                binding.textViewResultadoIMC.text = "Valores invalidos"
+            }
+            else if(peso.toFloat() > 0 && altura.toFloat() > 0){
+                val imc = IMC(peso, altura);
 
-            arrayResultados.add(resultado.toString())
-            arrayDatas.add(dataExata)
+                val resultado = String.format("%.2f", imc)
+                val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")
+                val dataExata = LocalDateTime.now().format(formatter).toString()
 
-            Salvar(CHAVEARRAYRESULT, arrayResultados)
-            Salvar(CHAVEARRAYDATE, arrayDatas)
+                binding.textViewResultadoIMC.text = resultado
+
+                arrayResultados.add(resultado.toString())
+                arrayDatas.add(dataExata)
+
+                Salvar(CHAVEARRAYRESULT, arrayResultados)
+                Salvar(CHAVEARRAYDATE, arrayDatas)
+            }
         }
 
         binding.buttonCalculosAnteriores.setOnClickListener {
@@ -65,7 +77,6 @@ class CalculadoraIMC : AppCompatActivity() {
     }
 
     private fun IMC(peso: String, altura: String): Float{
-
         val pesoFloat = peso.toFloat()
         val alturaFloat = altura.toFloat() / 100
 
