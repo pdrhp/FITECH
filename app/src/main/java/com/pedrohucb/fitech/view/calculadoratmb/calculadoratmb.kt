@@ -45,10 +45,15 @@ class calculadoratmb : AppCompatActivity() {
         binding.iconButtonVoltarTelaTMB.setOnClickListener { VoltarTela() }
 
         binding.buttonCalcularTBM.setOnClickListener {
+
+            if(binding.inputIdadeTBM.text.toString().isEmpty() || binding.inputPesoTBM.text.toString().isEmpty() || binding.inputAlturaTBM.text.toString().isEmpty()){
+                binding.textViewResultadoTMB.text = "Informações invalidas"
+                return@setOnClickListener
+            }
             val idade = binding.inputIdadeTBM.text.toString()
-            val genero = HomemOuMulher(binding.inputGeneroTBM.selectedItem.toString())
             val peso = binding.inputPesoTBM.text.toString()
             val altura = binding.inputAlturaTBM.text.toString()
+            val genero = HomemOuMulher(binding.inputGeneroTBM.selectedItem.toString())
             val nvatvfis = NvAtvOptionSelector(binding.inputNvAtvFisTBM.selectedItem.toString())
 
             CoroutineScope(Dispatchers.IO).launch {
