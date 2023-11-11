@@ -1,18 +1,14 @@
-package com.pedrohucb.fitech.view.formesqueceusuasenha
+package com.pedrohucb.fitech.ui.activitys
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
-import com.pedrohucb.fitech.R
 import com.pedrohucb.fitech.databinding.ActivityFormEsqueceuSuaSenhaBinding
-import com.pedrohucb.fitech.databinding.ActivityFormLoginBinding
-import com.pedrohucb.fitech.view.formlogin.FormLogin
 
-class FormEsqueceuSuaSenha : AppCompatActivity() {
+class FormEsqueceuSuaSenhaActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityFormEsqueceuSuaSenhaBinding
     override fun onCreate(savedInstanceState: Bundle?) {

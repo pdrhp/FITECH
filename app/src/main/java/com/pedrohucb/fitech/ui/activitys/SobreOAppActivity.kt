@@ -1,11 +1,9 @@
-package com.pedrohucb.fitech.view.sobreoapp
-
+package com.pedrohucb.fitech.ui.activitys
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.pedrohucb.fitech.R
 import com.pedrohucb.fitech.databinding.ActivitySobreoappBinding
 
-class SobreOApp : AppCompatActivity() {
+class SobreOAppActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivitySobreoappBinding
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.pedrohucb.fitech.view.calculadoraimc
+package com.pedrohucb.fitech.models
 
 data class CalculoAnteriores(
     val resultadoCalculo: String,

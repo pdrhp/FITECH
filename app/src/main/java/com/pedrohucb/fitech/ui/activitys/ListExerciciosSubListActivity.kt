@@ -1,17 +1,15 @@
-package com.pedrohucb.fitech.view.listexercicios
+package com.pedrohucb.fitech.ui.activitys
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import com.pedrohucb.fitech.R
+import androidx.appcompat.app.AppCompatActivity
 import com.pedrohucb.fitech.databinding.ActivityListExerciciosSubListBinding
-import com.pedrohucb.fitech.view.listexercicios.Adapters.AdapterExercicio
-import com.pedrohucb.fitech.view.listexercicios.models.ExercicioRepositoryAbdominais
-import com.pedrohucb.fitech.view.listexercicios.models.ExercicioRepositoryInferiores
-import com.pedrohucb.fitech.view.listexercicios.models.ExercicioRepositorySuperiores
+import com.pedrohucb.fitech.models.ExercicioRepositoryAbdominais
+import com.pedrohucb.fitech.models.ExercicioRepositoryInferiores
+import com.pedrohucb.fitech.models.ExercicioRepositorySuperiores
+import com.pedrohucb.fitech.ui.adapters.AdapterExercicio
 
-class ListExerciciosSubList : AppCompatActivity() {
+class ListExerciciosSubListActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityListExerciciosSubListBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,13 +40,13 @@ class ListExerciciosSubList : AppCompatActivity() {
     }
 
     private fun VoltarTelaAnterior(){
-        val intent = Intent(this, ListExercicios::class.java)
+        val intent = Intent(this, ListExerciciosActivity::class.java)
         startActivity(intent)
         finish()
     }
 
     private fun DetalharExercicio(regiao:Int, position : Int){
-        val intent = Intent(this, ExercicioDetailed::class.java)
+        val intent = Intent(this, ExercicioDetailedActivity::class.java)
         intent.putExtra("regiao", regiao)
         intent.putExtra("position", position)
         startActivity(intent)
