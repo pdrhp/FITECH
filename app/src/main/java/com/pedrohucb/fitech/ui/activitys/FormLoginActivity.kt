@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
@@ -24,47 +25,16 @@ class FormLoginActivity : AppCompatActivity() {
             val email = binding.etInputEmailLogin.text.toString();
             val senha = binding.etInputSenhaLogin.text.toString();
 
-            if(email.isEmpty() || senha.isEmpty()){
-                val snackbar = Snackbar.make(view, "Preencha todos os campos", Snackbar.LENGTH_SHORT)
-                snackbar.setBackgroundTint(Color.RED)
-                snackbar.show()
-            }else{
-                auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener{ autenticacao ->
-                    if(autenticacao.isSuccessful){
-                        NavegarParaATelaPrincipal();
-                    }
-                }.addOnFailureListener{ exception ->
-                    val mensagemErro = when(exception){
-                        is FirebaseAuthInvalidCredentialsException -> "E-mail ou senha errados"
-                        is FirebaseAuthInvalidUserException -> "E-mail não encontrado"
-                        else -> "Não foi possivel fazer login"
-                    }
-
-                    val snackbar = Snackbar.make(view, mensagemErro, Snackbar.LENGTH_SHORT)
-                    snackbar.setBackgroundTint(Color.RED)
-                    snackbar.show()
-                }
-            }
+            AutenticaUsuario(email, senha, view)
         }
 
         binding.tvLabelEsqueceuSuaSenha.setOnClickListener {
             NavegarTelaEsqueceuSuaSenha()
         }
 
-        binding.btCadastrarLogin.setOnClickListener{
-            val intent = Intent(this, FormCadastroActivity::class.java)
-            startActivity(intent)
+        binding.btCadastrarLogin.setOnClickListener {
+            NavegarTelaDeCadastro()
         }
-    }
-
-    private fun NavegarTelaEsqueceuSuaSenha(){
-        val intent = Intent(this, FormEsqueceuSuaSenhaActivity::class.java)
-        startActivity(intent)
-    }
-    private fun NavegarParaATelaPrincipal(){
-        val intent = Intent(this, TelaPrincipalActivity::class.java)
-        startActivity(intent)
-        finish()
     }
 
     override fun onStart() {
@@ -72,9 +42,52 @@ class FormLoginActivity : AppCompatActivity() {
 
         val usuarioAtual = FirebaseAuth.getInstance().currentUser
 
-        if (usuarioAtual != null){
+        if (usuarioAtual != null) {
             NavegarParaATelaPrincipal();
         }
 
+    }
+
+    private fun AutenticaUsuario(email: String, senha: String, view: View) {
+        if (email.isEmpty() || senha.isEmpty()) {
+            EnvioSnackBarErro(view, "Preencha todos os campos")
+        } else {
+            auth.signInWithEmailAndPassword(email, senha)
+                .addOnCompleteListener { autenticacao ->
+                    if (autenticacao.isSuccessful) {
+                        NavegarParaATelaPrincipal();
+                    }
+                }.addOnFailureListener { exception ->
+                    val mensagemErro = when (exception) {
+                        is FirebaseAuthInvalidCredentialsException -> "E-mail ou senha errados"
+                        is FirebaseAuthInvalidUserException -> "E-mail não encontrado"
+                        else -> "Não foi possivel fazer login"
+                    }
+
+                    EnvioSnackBarErro(view, mensagemErro)
+                }
+        }
+    }
+
+    private fun EnvioSnackBarErro(view: View, mensagemErro: String) {
+        val snackbar = Snackbar.make(view, mensagemErro, Snackbar.LENGTH_SHORT)
+        snackbar.setBackgroundTint(Color.RED)
+        snackbar.show()
+    }
+
+    private fun NavegarTelaDeCadastro() {
+        val intent = Intent(this, FormCadastroActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun NavegarTelaEsqueceuSuaSenha() {
+        val intent = Intent(this, FormEsqueceuSuaSenhaActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun NavegarParaATelaPrincipal() {
+        val intent = Intent(this, TelaPrincipalActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
