@@ -13,10 +13,18 @@ import com.pedrohucb.fitech.models.ExercicioRepositoryInferiores
 import com.pedrohucb.fitech.models.ExercicioRepositorySuperiores
 
 
+/**
+ * Activity para detalhes do exercício.
+ */
 class ExercicioDetailedActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityExercicioDetailedBinding
     private lateinit var exercicioList : List<Exercicio>
+
+
+    /**
+     * Chamado quando a activity está iniciando.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityExercicioDetailedBinding.inflate(layoutInflater)
@@ -34,15 +42,19 @@ class ExercicioDetailedActivity : AppCompatActivity() {
         configuraExercicio(positionList)
     }
 
+    /**
+     * Configura o exercício.
+     */
     private fun configuraExercicio(positionList: Int) {
         configuraVideo(positionList)
-
-
         binding.titleExercicioDetailed.text = exercicioList[positionList].tituloExercicio
         binding.descricaoExercicioDetailed.text = exercicioList[positionList].descricaoExercicio
         binding.videoViewExercicio.start()
     }
 
+    /**
+     * Configura o vídeo.
+     */
     private fun configuraVideo(positionList: Int) {
         val video = exercicioList[positionList].videoPackage
         val videoURI = Uri.parse("android.resource://${packageName}/${video}")
@@ -59,6 +71,9 @@ class ExercicioDetailedActivity : AppCompatActivity() {
         binding.videoViewExercicio.setVideoURI(videoURI)
     }
 
+    /**
+     * Escolhe a região dos exercícios.
+     */
     private fun escolheRegiaoDosExercicios(regiao: Int) {
         if (regiao == 0) {
             exercicioList = ExercicioRepositorySuperiores.getExercicios()
@@ -69,6 +84,9 @@ class ExercicioDetailedActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Retorna para a tela anterior.
+     */
     private fun VoltarTelaAnterior(regiao : Int){
         val intent = Intent(this, ListExerciciosSubListActivity::class.java)
         intent.putExtra("position", regiao)
