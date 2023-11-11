@@ -15,37 +15,37 @@
         android:theme="@style/Theme.FITECH"
         tools:targetApi="31">
         <activity
-            android:name=".view.sobreoapp.SobreOApp"
+            android:name=".ui.activitys.SobreOAppActivity"
             android:exported="false" />
         <activity
-            android:name=".view.formesqueceusuasenha.FormEsqueceuSuaSenha"
+            android:name=".ui.activitys.FormEsqueceuSuaSenhaActivity"
             android:exported="false" />
         <activity
-            android:name=".view.calculadoratmb.calculadoratmb"
+            android:name=".ui.activitys.CalculadoraTMBActivity"
             android:exported="false" />
         <activity
-            android:name=".view.listexercicios.ExercicioDetailed"
+            android:name=".ui.activitys.ExercicioDetailedActivity"
             android:exported="false" />
         <activity
-            android:name=".view.listexercicios.ListExerciciosSubList"
+            android:name=".ui.activitys.ListExerciciosSubListActivity"
             android:exported="false" />
         <activity
-            android:name=".view.listexercicios.ListExercicios"
+            android:name=".ui.activitys.ListExerciciosActivity"
             android:exported="false" />
         <activity
-            android:name=".view.calculadoraimc.TelaHistoricoDeCalculos"
+            android:name=".ui.activitys.TelaHistoricoDeCalculosActivity"
             android:exported="false" />
         <activity
-            android:name=".view.calculadoraimc.CalculadoraIMC"
+            android:name=".ui.activitys.CalculadoraIMCActivity"
             android:exported="false" />
         <activity
-            android:name=".view.telaprincipal.TelaPrincipal"
+            android:name=".ui.activitys.TelaPrincipalActivity"
             android:exported="false" />
         <activity
-            android:name=".view.formcadastro.FormCadastro"
+            android:name=".ui.activitys.FormCadastroActivity"
             android:exported="false" />
         <activity
-            android:name=".view.formlogin.FormLogin"
+            android:name=".ui.activitys.FormLoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

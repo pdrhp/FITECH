@@ -1,20 +1,17 @@
-package com.pedrohucb.fitech.view.formcadastro
+package com.pedrohucb.fitech.ui.activitys
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.Firebase
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthEmailException
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
-import com.pedrohucb.fitech.R
 import com.pedrohucb.fitech.databinding.ActivityFormCadastroBinding
 
-class FormCadastro : AppCompatActivity() {
+class FormCadastroActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityFormCadastroBinding
     private val auth = FirebaseAuth.getInstance()

@@ -1,4 +1,4 @@
-package com.pedrohucb.fitech.view.listexercicios.models
+package com.pedrohucb.fitech.models
 
 enum class TipoExercicio(val descParte : String) {
     REGIAOINFERIOR("Regiao inferior"),

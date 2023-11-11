@@ -1,4 +1,4 @@
-package com.pedrohucb.fitech.view.listexercicios
+package com.pedrohucb.fitech.ui.activitys
 
 import android.content.Intent
 import android.media.MediaPlayer.OnCompletionListener
@@ -7,13 +7,13 @@ import android.os.Bundle
 import android.widget.MediaController
 import androidx.appcompat.app.AppCompatActivity
 import com.pedrohucb.fitech.databinding.ActivityExercicioDetailedBinding
-import com.pedrohucb.fitech.view.listexercicios.models.Exercicio
-import com.pedrohucb.fitech.view.listexercicios.models.ExercicioRepositoryAbdominais
-import com.pedrohucb.fitech.view.listexercicios.models.ExercicioRepositoryInferiores
-import com.pedrohucb.fitech.view.listexercicios.models.ExercicioRepositorySuperiores
+import com.pedrohucb.fitech.models.Exercicio
+import com.pedrohucb.fitech.models.ExercicioRepositoryAbdominais
+import com.pedrohucb.fitech.models.ExercicioRepositoryInferiores
+import com.pedrohucb.fitech.models.ExercicioRepositorySuperiores
 
 
-class ExercicioDetailed : AppCompatActivity() {
+class ExercicioDetailedActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityExercicioDetailedBinding
     private lateinit var exercicioList : List<Exercicio>
@@ -60,7 +60,7 @@ class ExercicioDetailed : AppCompatActivity() {
     }
 
     private fun VoltarTelaAnterior(regiao : Int){
-        val intent = Intent(this, ListExerciciosSubList::class.java)
+        val intent = Intent(this, ListExerciciosSubListActivity::class.java)
         intent.putExtra("position", regiao)
         startActivity(intent)
         finish()

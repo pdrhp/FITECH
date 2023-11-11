@@ -1,4 +1,4 @@
-package com.pedrohucb.fitech.view.calculadoraimc
+package com.pedrohucb.fitech.ui.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.pedrohucb.fitech.R
+import com.pedrohucb.fitech.models.CalculoAnteriores
 
 class AdapterCalculoAnteriores(private val context: Context, private val calculoAnterioresList: List<CalculoAnteriores>) : BaseAdapter() {
     override fun getCount(): Int {

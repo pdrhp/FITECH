@@ -1,15 +1,13 @@
-package com.pedrohucb.fitech.view.listexercicios
+package com.pedrohucb.fitech.ui.activitys
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.pedrohucb.fitech.R
+import androidx.appcompat.app.AppCompatActivity
 import com.pedrohucb.fitech.databinding.ActivityListExerciciosBinding
-import com.pedrohucb.fitech.view.listexercicios.Adapters.AdapterRegiaoExercico
-import com.pedrohucb.fitech.view.listexercicios.models.RegiaoDosExerciciosRepository
-import com.pedrohucb.fitech.view.telaprincipal.TelaPrincipal
+import com.pedrohucb.fitech.models.RegiaoDosExerciciosRepository
+import com.pedrohucb.fitech.ui.adapters.AdapterRegiaoExercico
 
-class ListExercicios : AppCompatActivity() {
+class ListExerciciosActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityListExerciciosBinding
 
@@ -33,13 +31,13 @@ class ListExercicios : AppCompatActivity() {
     }
 
     private fun NavegarParaASubList(position : Int){
-        val intent = Intent(this, ListExerciciosSubList::class.java)
+        val intent = Intent(this, ListExerciciosSubListActivity::class.java)
         intent.putExtra("position", position)
         startActivity(intent)
     }
 
     private fun VoltarTelaAnterior(){
-        val intent = Intent(this, TelaPrincipal::class.java)
+        val intent = Intent(this, TelaPrincipalActivity::class.java)
         startActivity(intent)
         finish()
     }

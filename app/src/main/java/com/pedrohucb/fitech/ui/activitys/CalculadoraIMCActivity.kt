@@ -1,17 +1,15 @@
-package com.pedrohucb.fitech.view.calculadoraimc
+package com.pedrohucb.fitech.ui.activitys
 
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.pedrohucb.fitech.R
+import androidx.appcompat.app.AppCompatActivity
 import com.pedrohucb.fitech.databinding.ActivityCalculadoraImcBinding
-import com.pedrohucb.fitech.view.telaprincipal.TelaPrincipal
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class CalculadoraIMC : AppCompatActivity() {
+class CalculadoraIMCActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityCalculadoraImcBinding
     private lateinit var sharedPreferences: SharedPreferences
@@ -70,7 +68,7 @@ class CalculadoraIMC : AppCompatActivity() {
     }
 
     private fun NavegarHistorico(arrayResultados : ArrayList<String>, arrayDates : ArrayList<String>){
-        val intent = Intent(this, TelaHistoricoDeCalculos::class.java)
+        val intent = Intent(this, TelaHistoricoDeCalculosActivity::class.java)
         intent.putStringArrayListExtra("array_results", arrayResultados)
         intent.putStringArrayListExtra("array_dates", arrayDates)
         startActivity(intent)
@@ -86,7 +84,7 @@ class CalculadoraIMC : AppCompatActivity() {
     }
 
     private fun Voltar(){
-        val intent = Intent(this, TelaPrincipal::class.java)
+        val intent = Intent(this, TelaPrincipalActivity::class.java)
         startActivity(intent)
         finish()
     }

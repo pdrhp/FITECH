@@ -1,23 +1,15 @@
-package com.pedrohucb.fitech.view.telaprincipal
+package com.pedrohucb.fitech.ui.activitys
 
 import android.content.Intent
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
 import android.view.MenuItem
 import android.widget.PopupMenu
-import com.google.android.material.snackbar.Snackbar
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.pedrohucb.fitech.R
 import com.pedrohucb.fitech.databinding.ActivityTelaPrincipalBinding
-import com.pedrohucb.fitech.view.calculadoraimc.CalculadoraIMC
-import com.pedrohucb.fitech.view.calculadoratmb.calculadoratmb
-import com.pedrohucb.fitech.view.formlogin.FormLogin
-import com.pedrohucb.fitech.view.listexercicios.ListExercicios
-import com.pedrohucb.fitech.view.sobreoapp.SobreOApp
 
-class TelaPrincipal : AppCompatActivity() {
+class TelaPrincipalActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityTelaPrincipalBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,20 +43,20 @@ class TelaPrincipal : AppCompatActivity() {
 
 
     private fun NavegarTelaListaExercicios(){
-        val intent = Intent(this, ListExercicios::class.java)
+        val intent = Intent(this, ListExerciciosActivity::class.java)
         startActivity(intent)
     }
     private fun NavegarTelaCalculadoraIMC(){
-        val intent = Intent(this, CalculadoraIMC::class.java)
+        val intent = Intent(this, CalculadoraIMCActivity::class.java)
         startActivity(intent)
     }
     private fun NavegarTelaCalculadoraTMB(){
-        val intent = Intent(this, calculadoratmb::class.java)
+        val intent = Intent(this, CalculadoraTMBActivity::class.java)
         startActivity(intent)
     }
 
     private fun NavegarTelaSobreOApp(){
-        val intent = Intent(this, SobreOApp::class.java)
+        val intent = Intent(this, SobreOAppActivity::class.java)
         startActivity(intent)
     }
 
@@ -75,7 +67,7 @@ class TelaPrincipal : AppCompatActivity() {
                 when(item.itemId){
                     R.id.item_sair -> {
                         FirebaseAuth.getInstance().signOut()
-                        val voltarTelaLogin = Intent(this@TelaPrincipal, FormLogin::class.java)
+                        val voltarTelaLogin = Intent(this@TelaPrincipalActivity, FormLoginActivity::class.java)
                         startActivity(voltarTelaLogin)
                         finish()
                         true

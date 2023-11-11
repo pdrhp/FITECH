@@ -1,4 +1,4 @@
-package com.pedrohucb.fitech.view.listexercicios.Adapters
+package com.pedrohucb.fitech.ui.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,9 +7,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import com.pedrohucb.fitech.R
-import com.pedrohucb.fitech.view.listexercicios.models.Exercicio
+import com.pedrohucb.fitech.models.Exercicio
 
 class AdapterExercicio(private val context : Context, private val listaDeExercicios : List<Exercicio>) : BaseAdapter() {
     override fun getCount(): Int { return listaDeExercicios.size }

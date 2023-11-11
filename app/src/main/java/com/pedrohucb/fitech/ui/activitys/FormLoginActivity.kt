@@ -1,6 +1,5 @@
-package com.pedrohucb.fitech.view.formlogin
+package com.pedrohucb.fitech.ui.activitys
 
-import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -9,13 +8,9 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
-import com.pedrohucb.fitech.R
 import com.pedrohucb.fitech.databinding.ActivityFormLoginBinding
-import com.pedrohucb.fitech.view.formcadastro.FormCadastro
-import com.pedrohucb.fitech.view.formesqueceusuasenha.FormEsqueceuSuaSenha
-import com.pedrohucb.fitech.view.telaprincipal.TelaPrincipal
 
-class FormLogin : AppCompatActivity() {
+class FormLoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFormLoginBinding
     private var auth = FirebaseAuth.getInstance()
@@ -57,17 +52,17 @@ class FormLogin : AppCompatActivity() {
         }
 
         binding.btCadastrarLogin.setOnClickListener{
-            val intent = Intent(this, FormCadastro::class.java)
+            val intent = Intent(this, FormCadastroActivity::class.java)
             startActivity(intent)
         }
     }
 
     private fun NavegarTelaEsqueceuSuaSenha(){
-        val intent = Intent(this, FormEsqueceuSuaSenha::class.java)
+        val intent = Intent(this, FormEsqueceuSuaSenhaActivity::class.java)
         startActivity(intent)
     }
     private fun NavegarParaATelaPrincipal(){
-        val intent = Intent(this, TelaPrincipal::class.java)
+        val intent = Intent(this, TelaPrincipalActivity::class.java)
         startActivity(intent)
         finish()
     }

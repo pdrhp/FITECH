@@ -1,4 +1,4 @@
-package com.pedrohucb.fitech.view.calculadoratmb.models
+package com.pedrohucb.fitech.models
 
 data class DailyCaloriesRequest(
     val status_code : String,

@@ -1,17 +1,15 @@
-package com.pedrohucb.fitech.view.calculadoratmb
+package com.pedrohucb.fitech.ui.activitys
 
 import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import com.google.firebase.BuildConfig
+import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.pedrohucb.fitech.R
 import com.pedrohucb.fitech.databinding.ActivityCalculadoratmbBinding
-import com.pedrohucb.fitech.view.calculadoratmb.models.DailyCaloriesRequest
-import com.pedrohucb.fitech.view.telaprincipal.TelaPrincipal
+import com.pedrohucb.fitech.models.DailyCaloriesRequest
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,7 +17,7 @@ import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
 
-class calculadoratmb : AppCompatActivity() {
+class CalculadoraTMBActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityCalculadoratmbBinding
 
@@ -72,7 +70,7 @@ class calculadoratmb : AppCompatActivity() {
     }
 
     private fun VoltarTela(){
-        val intent = Intent(this, TelaPrincipal::class.java)
+        val intent = Intent(this, TelaPrincipalActivity::class.java)
         startActivity(intent)
         finish()
     }

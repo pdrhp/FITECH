@@ -1,4 +1,4 @@
-package com.pedrohucb.fitech.view.listexercicios.models
+package com.pedrohucb.fitech.models
 
 import com.pedrohucb.fitech.R
 

@@ -1,12 +1,13 @@
-package com.pedrohucb.fitech.view.calculadoraimc
+package com.pedrohucb.fitech.ui.activitys
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.pedrohucb.fitech.R
 import com.pedrohucb.fitech.databinding.ActivityTelaHistoricoDeCalculosBinding
+import com.pedrohucb.fitech.models.CalculoAnteriores
+import com.pedrohucb.fitech.ui.adapters.AdapterCalculoAnteriores
 
-class TelaHistoricoDeCalculos : AppCompatActivity() {
+class TelaHistoricoDeCalculosActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityTelaHistoricoDeCalculosBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +28,7 @@ class TelaHistoricoDeCalculos : AppCompatActivity() {
     }
 
     private fun Voltar(){
-        val intent = Intent(this, CalculadoraIMC::class.java)
+        val intent = Intent(this, CalculadoraIMCActivity::class.java)
         startActivity(intent)
         finish()
     }
