@@ -17,10 +17,16 @@ import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
 
+/**
+ * Activity para a Calculadora de TMB.
+ */
 class CalculadoraTMBActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCalculadoratmbBinding
 
+    /**
+     * Chamado quando a activity está iniciando.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCalculadoratmbBinding.inflate(layoutInflater)
@@ -50,6 +56,9 @@ class CalculadoraTMBActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Configura o botão de calcular.
+     */
     private fun configuraBotaoCalcular(apiKey: String) {
         if (binding.inputIdadeTBM.text.toString()
                 .isEmpty() || binding.inputPesoTBM.text.toString()
@@ -77,6 +86,9 @@ class CalculadoraTMBActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Recupera a chave da API.
+     */
     private fun recuperaAPIKEY(): String {
         val applicationInfo: ApplicationInfo = application.packageManager.getApplicationInfo(
             application.packageName,
@@ -86,12 +98,18 @@ class CalculadoraTMBActivity : AppCompatActivity() {
         return apiKey
     }
 
+    /**
+     * Retorna para a tela principal.
+     */
     private fun VoltarTela() {
         val intent = Intent(this, TelaPrincipalActivity::class.java)
         startActivity(intent)
         finish()
     }
 
+    /**
+     * Obtém as calorias diárias.
+     */
     private fun getCaloriasDiarias(
         idade: String,
         genero: String,
@@ -118,6 +136,9 @@ class CalculadoraTMBActivity : AppCompatActivity() {
         return bmr;
     }
 
+    /**
+     * Determina se o gênero é masculino ou feminino.
+     */
     private fun HomemOuMulher(genero: String): String {
         if (genero == "Masculino") {
             return "male"
@@ -126,6 +147,9 @@ class CalculadoraTMBActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Seleciona a opção de nível de atividade.
+     */
     private fun NvAtvOptionSelector(nivel: String): String {
         if (nivel == "Sedentario") {
             return "level_1"
