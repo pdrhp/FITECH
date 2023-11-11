@@ -9,9 +9,18 @@ import com.pedrohucb.fitech.models.ExercicioRepositoryInferiores
 import com.pedrohucb.fitech.models.ExercicioRepositorySuperiores
 import com.pedrohucb.fitech.ui.adapters.AdapterExercicio
 
+/**
+ * Activity para a lista de exercícios.
+ */
 class ListExerciciosSubListActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityListExerciciosSubListBinding
+
+    // Instância do objeto de binding com acesso às views do layout.
+
+    /**
+     * Chamado quando a activity está iniciando.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityListExerciciosSubListBinding.inflate(layoutInflater)
@@ -19,17 +28,21 @@ class ListExerciciosSubListActivity : AppCompatActivity() {
 
         val regiao = intent.getIntExtra("position", 3)
         escolheRegiaoExercicio(regiao)
-        
+
+        // Define o listener de clique para os itens da lista de exercícios.
         binding.listViewListaDeExercicios.setOnItemClickListener { parent, view, position, id ->
             DetalharExercicio(regiao, position)
         }
 
-
+        // Define o listener de clique para o botão de voltar.
         binding.iconButtonVoltarTelaListaExercicios.setOnClickListener {
             VoltarTelaAnterior()
         }
     }
 
+    /**
+     * Escolhe a região do exercício.
+     */
     private fun escolheRegiaoExercicio(regiao: Int) {
         if (regiao == 0) {
             binding.listViewListaDeExercicios.adapter =
@@ -43,12 +56,18 @@ class ListExerciciosSubListActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Retorna para a tela anterior.
+     */
     private fun VoltarTelaAnterior(){
         val intent = Intent(this, ListExerciciosActivity::class.java)
         startActivity(intent)
         finish()
     }
 
+    /**
+     * Detalha o exercício.
+     */
     private fun DetalharExercicio(regiao:Int, position : Int){
         val intent = Intent(this, ExercicioDetailedActivity::class.java)
         intent.putExtra("regiao", regiao)
