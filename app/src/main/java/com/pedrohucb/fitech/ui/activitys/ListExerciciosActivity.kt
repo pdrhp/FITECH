@@ -9,16 +9,15 @@ import com.pedrohucb.fitech.ui.adapters.AdapterRegiaoExercico
 
 class ListExerciciosActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityListExerciciosBinding
+    private lateinit var binding: ActivityListExerciciosBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityListExerciciosBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.listViewListaDeRegioes.adapter = AdapterRegiaoExercico(this, RegiaoDosExerciciosRepository.getRegiaoDosExercicios())
-
-
+        binding.listViewListaDeRegioes.adapter =
+            AdapterRegiaoExercico(this, RegiaoDosExerciciosRepository.getRegiaoDosExercicios())
 
         binding.iconButtonVoltarTelaListaExercicios.setOnClickListener {
             VoltarTelaAnterior()
@@ -30,13 +29,13 @@ class ListExerciciosActivity : AppCompatActivity() {
 
     }
 
-    private fun NavegarParaASubList(position : Int){
+    private fun NavegarParaASubList(position: Int) {
         val intent = Intent(this, ListExerciciosSubListActivity::class.java)
         intent.putExtra("position", position)
         startActivity(intent)
     }
 
-    private fun VoltarTelaAnterior(){
+    private fun VoltarTelaAnterior() {
         val intent = Intent(this, TelaPrincipalActivity::class.java)
         startActivity(intent)
         finish()

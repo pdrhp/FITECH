@@ -25,20 +25,25 @@ class ExercicioDetailedActivity : AppCompatActivity() {
         val positionList = intent.getIntExtra("position", 15)
         val regiao = intent.getIntExtra("regiao", 3)
 
-        if(regiao == 0){
-            exercicioList = ExercicioRepositorySuperiores.getExercicios()
-        }
-        else if(regiao == 1){
-            exercicioList = ExercicioRepositoryInferiores.getExercicios()
-        }
-        else if(regiao == 2){
-            exercicioList = ExercicioRepositoryAbdominais.getExercicios()
-        }
+        escolheRegiaoDosExercicios(regiao)
 
         binding.iconButtonVoltarTelaExercicioDetailed.setOnClickListener {
             VoltarTelaAnterior(regiao)
         }
 
+        configuraExercicio(positionList)
+    }
+
+    private fun configuraExercicio(positionList: Int) {
+        configuraVideo(positionList)
+
+
+        binding.titleExercicioDetailed.text = exercicioList[positionList].tituloExercicio
+        binding.descricaoExercicioDetailed.text = exercicioList[positionList].descricaoExercicio
+        binding.videoViewExercicio.start()
+    }
+
+    private fun configuraVideo(positionList: Int) {
         val video = exercicioList[positionList].videoPackage
         val videoURI = Uri.parse("android.resource://${packageName}/${video}")
 
@@ -52,11 +57,16 @@ class ExercicioDetailedActivity : AppCompatActivity() {
 
         binding.videoViewExercicio.setMediaController(mediaController)
         binding.videoViewExercicio.setVideoURI(videoURI)
+    }
 
-
-        binding.titleExercicioDetailed.text = exercicioList[positionList].tituloExercicio
-        binding.descricaoExercicioDetailed.text = exercicioList[positionList].descricaoExercicio
-        binding.videoViewExercicio.start()
+    private fun escolheRegiaoDosExercicios(regiao: Int) {
+        if (regiao == 0) {
+            exercicioList = ExercicioRepositorySuperiores.getExercicios()
+        } else if (regiao == 1) {
+            exercicioList = ExercicioRepositoryInferiores.getExercicios()
+        } else if (regiao == 2) {
+            exercicioList = ExercicioRepositoryAbdominais.getExercicios()
+        }
     }
 
     private fun VoltarTelaAnterior(regiao : Int){
