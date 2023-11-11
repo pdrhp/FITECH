@@ -18,16 +18,7 @@ class ListExerciciosSubListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val regiao = intent.getIntExtra("position", 3)
-
-        if(regiao == 0){
-        binding.listViewListaDeExercicios.adapter = AdapterExercicio(this, ExercicioRepositorySuperiores.getExercicios())
-        }
-        else if(regiao == 1){
-            binding.listViewListaDeExercicios.adapter = AdapterExercicio(this, ExercicioRepositoryInferiores.getExercicios())
-        }
-        else if(regiao == 2){
-            binding.listViewListaDeExercicios.adapter = AdapterExercicio(this, ExercicioRepositoryAbdominais.getExercicios())
-        }
+        escolheRegiaoExercicio(regiao)
         
         binding.listViewListaDeExercicios.setOnItemClickListener { parent, view, position, id ->
             DetalharExercicio(regiao, position)
@@ -36,6 +27,19 @@ class ListExerciciosSubListActivity : AppCompatActivity() {
 
         binding.iconButtonVoltarTelaListaExercicios.setOnClickListener {
             VoltarTelaAnterior()
+        }
+    }
+
+    private fun escolheRegiaoExercicio(regiao: Int) {
+        if (regiao == 0) {
+            binding.listViewListaDeExercicios.adapter =
+                AdapterExercicio(this, ExercicioRepositorySuperiores.getExercicios())
+        } else if (regiao == 1) {
+            binding.listViewListaDeExercicios.adapter =
+                AdapterExercicio(this, ExercicioRepositoryInferiores.getExercicios())
+        } else if (regiao == 2) {
+            binding.listViewListaDeExercicios.adapter =
+                AdapterExercicio(this, ExercicioRepositoryAbdominais.getExercicios())
         }
     }
 
