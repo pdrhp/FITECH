@@ -24,9 +24,11 @@ Este projeto serviu de exercicios para fixar conceitos do Kotlin e desenvolvimen
 
 - Exibição de mídia com ImageView e VideoView.
 
-- Persistencia de dados utilizando sharedPreferences para armazenar calculos e resultados anteriores do usuário.
+- Persistencia de dados utilizando SQlite para armazenar calculos e resultados anteriores do usuário.
 
-- Integração com serviço externo utilizando a biblioteca OkHttp para realizar requisições HTTP. 
+- Integração com serviço externo utilizando a biblioteca OkHttp para realizar requisições HTTP.
+
+- Criação de adapters para lista personalizadas
 
 - Serviço de autenticação via email e senha utilizando o serviço Google Firebase.
 
@@ -34,10 +36,10 @@ Este projeto serviu de exercicios para fixar conceitos do Kotlin e desenvolvimen
 ## Funcionalidades
 
 - Autenticação utilizando E-mail e Senha
-- Calculadora de IMC
+- Calculadora de IMC, que possui um historico de calculos anteriores utilizando SQlite
 - Lista de atividades fisicas para membros superiores, inferiores e abdominais.
 - Cada item da lista possui um video e uma descrição do exercicio
-- Calculadora de calorias diarias
+- Calculadora de calorias diarias (Utilizando Requisições HTTP)
 
 
 
